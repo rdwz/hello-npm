@@ -12,7 +12,7 @@ jobs:
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
-      - run: bun ci
+      - run: bun install
 #      - run: npm test
 
   publish-gpr:
@@ -27,7 +27,7 @@ jobs:
         with:
           bun-version: latest
           registry-url: https://npm.pkg.github.com/
-      - run: bun ci
+      - run: bun install
       - run: bunx @morlay/bunpublish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
